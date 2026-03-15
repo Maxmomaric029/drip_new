@@ -4,3 +4,6 @@ APP_STL             := c++_static
 APP_OPTIM           := release
 APP_THIN_ARCHIVE    := true
 APP_PIE 		    := true
+APP_ABI := arm64-v8a
+APP_CPPFLAGS += -I$(NDK_PROJECT_PATH)/KhanhMods/IL2CppSDK
+APP_CFLAGS += -I$(NDK_PROJECT_PATH)/KhanhMods/IL2CppSDK
