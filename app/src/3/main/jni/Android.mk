@@ -21,10 +21,8 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto
 LOCAL_SRC_FILES := curl/openssl-android-$(TARGET_ARCH_ABI)/lib/libcrypto.a
 include $(PREBUILT_STATIC_LIBRARY)
-
 include $(CLEAR_VARS)
 LOCAL_MODULE    := anogs
-
 LOCAL_CFLAGS := -Wno-error=format-security -fvisibility=hidden -ffunction-sections -fdata-sections -w
 LOCAL_CFLAGS += -frtti -fexceptions -fpermissive
 LOCAL_CFLAGS += -I$(LOCAL_PATH)/KhanhMods/IL2CppSDK
@@ -33,7 +31,6 @@ LOCAL_CFLAGS += -I$(LOCAL_PATH)/xdl
 LOCAL_CFLAGS += -I$(LOCAL_PATH)/ImGui
 LOCAL_CFLAGS += -I$(LOCAL_PATH)/ImGui/backends
 LOCAL_CFLAGS += -I$(LOCAL_PATH)/Munodz
-
 LOCAL_CPPFLAGS := -Wno-error=format-security -fvisibility=hidden -ffunction-sections -fdata-sections -w -std=c++17
 LOCAL_CPPFLAGS += -Wno-error=c++11-narrowing -fms-extensions -frtti -fexceptions -fpermissive
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/KhanhMods/IL2CppSDK
@@ -42,11 +39,9 @@ LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/xdl
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui/backends
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/Munodz
-
 LOCAL_LDFLAGS += -Wl,--gc-sections,--strip-all, -llog
 LOCAL_ARM_MODE := arm
-LOCAL_LDLIBS := -llog -landroid -lEGL -lGLESv3 -lGLESv2 -lGLESv1_CM -lz
-
+LOCAL_LDLIBS := -llog -landroid -lEGL -lGLESv3 -lGLESv2 -lGLESv1_CM -lz -lc++_shared
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/KhanhMods
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/KhanhMods/IL2CppSDK
@@ -56,7 +51,6 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/ImGui/backends
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Munodz
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/curl/curl-android-$(TARGET_ARCH_ABI)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/curl/openssl-android-$(TARGET_ARCH_ABI)/include
-
 LOCAL_SRC_FILES := Main.cpp \
 xdl/xdl.c \
 xdl/xdl_iterate.c \
@@ -85,7 +79,6 @@ KhanhMods/IL2CppSDK/Il2Cpp.cpp \
 KhanhMods/Tools/MonoString.cpp \
 KhanhMods/Tools/Tools.cpp \
 oxorany/oxorany.cpp \
-
 LOCAL_STATIC_LIBRARIES := libdobby libcurl libssl libcrypto libmunodz
 LOCAL_CPP_FEATURES     := exceptions rtti
 include $(BUILD_SHARED_LIBRARY)
