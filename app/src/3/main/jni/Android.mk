@@ -53,9 +53,11 @@ LOCAL_C_INCLUDE := $(LOCAL_PATH)/xdl
 LOCAL_C_INCLUDE := $(LOCAL_PATH)/ImGui
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Munodz
 LOCAL_C_INCLUDE := $(LOCAL_PATH)/ImGui/backends
-LOCAL_C_INCLUDE := $(LOCAL_PATH)/KhanhMods
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/curl/curl-android-$(TARGET_ARCH_ABI)/include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/KhanhMods
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/KhanhMods/IL2CppSDK
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/curl/curl-android-$(TARGET_ARCH_ABI)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/curl/openssl-android-$(TARGET_ARCH_ABI)/include
+
 
 LOCAL_SRC_FILES := Main.cpp \
 xdl/xdl.c \
