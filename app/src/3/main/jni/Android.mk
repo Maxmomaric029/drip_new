@@ -43,6 +43,7 @@ LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/xdl
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui/backends
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/Munodz
+LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/KhanhMods/IL2CppSDK
 
 LOCAL_LDFLAGS += -Wl,--gc-sections,--strip-all, -llog
 LOCAL_ARM_MODE := arm
