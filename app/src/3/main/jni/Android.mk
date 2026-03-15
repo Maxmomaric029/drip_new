@@ -39,7 +39,8 @@ LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/xdl
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/ImGui/backends
 LOCAL_CPPFLAGS += -I$(LOCAL_PATH)/Munodz
-LOCAL_LDFLAGS += -Wl,--gc-sections,--strip-all, -llog
+LOCAL_LDFLAGS += -L$(LOCAL_PATH)/KhanhMods/Tools/Dobby/libraries/$(TARGET_ARCH_ABI)
+LOCAL_LDFLAGS += -Wl,--whole-archive $(LOCAL_PATH)/KhanhMods/Tools/Dobby/libraries/$(TARGET_ARCH_ABI)/libdobby.a -Wl,--no-whole-archive
 LOCAL_ARM_MODE := arm
 LOCAL_LDLIBS := -llog -landroid -lEGL -lGLESv3 -lGLESv2 -lGLESv1_CM -lz -lc++_shared
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
@@ -79,6 +80,6 @@ KhanhMods/IL2CppSDK/Il2Cpp.cpp \
 KhanhMods/Tools/MonoString.cpp \
 KhanhMods/Tools/Tools.cpp \
 oxorany/oxorany.cpp \
-LOCAL_STATIC_LIBRARIES := libdobby libcurl libssl libcrypto libmunodz
+LOCAL_STATIC_LIBRARIES := libcurl libssl libcrypto libmunodz
 LOCAL_CPP_FEATURES     := exceptions rtti
 include $(BUILD_SHARED_LIBRARY)
